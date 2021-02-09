@@ -1,13 +1,13 @@
 # Single Thread Jackson
 
-[![Build Status](https://travis-ci.com/appenders/appenders-jackson-singlethread.svg?branch=main)](https://travis-ci.com/github/appenders/appenders-jackson-singlethread)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.appenders.jackson/appenders-jackson-singlethread/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.appenders.jackson/appenders-jackson-singlethread/badge.svg)
-[![codecov](https://codecov.io/gh/appenders/appenders-jackson-singlethread/branch/main/graph/badge.svg?token=UHMX2NODNW)](https://codecov.io/gh/appenders/appenders-jackson-singlethread)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/appenders/appenders-jackson-singlethread)
+[![Build Status](https://travis-ci.com/appenders/appenders-jackson-st.svg?branch=main)](https://travis-ci.com/github/appenders/appenders-jackson-st)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.appenders.jackson/appenders-jackson-st/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.appenders.jackson/appenders-jackson-st/badge.svg)
+[![codecov](https://codecov.io/gh/appenders/appenders-jackson-st/branch/main/graph/badge.svg?token=UHMX2NODNW)](https://codecov.io/gh/appenders/appenders-jackson-st)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/appenders/appenders-jackson-st)
 
 The goal of this library is to increase throughput and efficiency of Jackson FasterXML `UTF8JsonGenerator` during POJOs serialization while preserving as many [jackson-core](https://github.com/FasterXML/jackson-core) features as possible.
 
-This goal was achieved by [SingleThreadJsonFactory](https://github.com/appenders/appenders-jackson-singlethread/blob/main/src/main/java/org/appenders/jackson/singlethread/SingleThreadJsonFactory.java). By creating reusable instances of core components of the generator, [jackson-benchmarks](https://github.com/FasterXML/jackson-benchmarks) show consistent performance improvements in following areas:
+This goal was achieved by [SingleThreadJsonFactory](https://github.com/appenders/appenders-jackson-st/blob/main/src/main/java/org/appenders/jackson/singlethread/SingleThreadJsonFactory.java). By creating reusable instances of core components of the generator, [jackson-benchmarks](https://github.com/FasterXML/jackson-benchmarks) show consistent performance improvements in following areas:
 * `Throughput` increase by at least 5%
 * `Memory allocation` reduction by ~58% (80% with Afterburner)
 

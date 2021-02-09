@@ -1,8 +1,8 @@
-package org.appenders.jackson.singlethread;
+package org.appenders.st.jackson;
 
 /*-
  * #%L
- * appenders-jackson-singlethread
+ * appenders-jackson-st
  * %%
  * Copyright (C) 2020 Appenders Project
  * %%
@@ -20,26 +20,23 @@ package org.appenders.jackson.singlethread;
  * #L%
  */
 
-import com.fasterxml.jackson.core.io.DataOutputAsStream;
-
-import java.io.DataOutput;
 import java.io.IOException;
+import java.io.OutputStream;
 
-public class DataOutputAsStreamDelegate extends DataOutputAsStream {
+public class OutputStreamDelegate extends OutputStream {
 
-    private DataOutput delegate;
+    private OutputStream delegate;
 
-    public DataOutputAsStreamDelegate(DataOutput dataOutput) {
-        super(dataOutput);
-        this.delegate = dataOutput;
+    public OutputStreamDelegate(OutputStream outputStream) {
+        this.delegate = outputStream;
     }
 
     /* visible for testing */
-    DataOutput getDelegate() {
+    OutputStream getDelegate() {
         return delegate;
     }
 
-    public void setDelegate(DataOutput delegate) {
+    public void setDelegate(OutputStream delegate) {
         this.delegate = delegate;
     }
 
@@ -56,6 +53,11 @@ public class DataOutputAsStreamDelegate extends DataOutputAsStream {
     @Override
     public void write(byte[] b, int off, int len) throws IOException {
         delegate.write(b, off, len);
+    }
+
+    @Override
+    public void close() throws IOException {
+        delegate.close();
     }
 
 }

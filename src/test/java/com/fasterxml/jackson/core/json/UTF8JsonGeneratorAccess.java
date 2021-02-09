@@ -1,6 +1,6 @@
 package com.fasterxml.jackson.core.json;
 
-import org.appenders.jackson.singlethread.ReusableUTF8JsonGenerator;
+import org.appenders.st.jackson.ReusableUTF8JsonGenerator;
 
 public class UTF8JsonGeneratorAccess {
 

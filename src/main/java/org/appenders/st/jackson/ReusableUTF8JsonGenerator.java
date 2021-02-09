@@ -1,8 +1,8 @@
-package org.appenders.jackson.singlethread;
+package org.appenders.st.jackson;
 
 /*-
  * #%L
- * appenders-jackson-singlethread
+ * appenders-jackson-st
  * %%
  * Copyright (C) 2020 Appenders Project
  * %%
