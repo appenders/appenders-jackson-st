@@ -25,6 +25,8 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonpCharacterEscapes;
 import com.fasterxml.jackson.core.io.IOContext;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -37,17 +39,17 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
 public class SingleThreadJsonFactoryTest {
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
 
     @Test
     public void createFileBasedGeneratorNotSupported() {
@@ -55,12 +57,11 @@ public class SingleThreadJsonFactoryTest {
         // given
         SingleThreadJsonFactory factory = new SingleThreadJsonFactory();
 
-        expectedException.expect(UnsupportedOperationException.class);
-        expectedException.expectMessage("File not supported. Use OutputStream");
-
         // when
-        factory.createGenerator(mock(File.class), JsonEncoding.UTF8);
+        UnsupportedOperationException exception = assertThrows(UnsupportedOperationException.class, () -> factory.createGenerator(mock(File.class), JsonEncoding.UTF8));
 
+        // then
+        assertThat(exception.getMessage(), equalTo("File not supported. Use OutputStream"));
     }
 
     @Test
@@ -69,11 +70,11 @@ public class SingleThreadJsonFactoryTest {
         // given
         SingleThreadJsonFactory factory = new SingleThreadJsonFactory();
 
-        expectedException.expect(UnsupportedEncodingException.class);
-        expectedException.expectMessage("Encoding not supported: " + JsonEncoding.UTF16_BE.getJavaName());
-
         // when
-        factory.createGenerator(mock(OutputStream.class), JsonEncoding.UTF16_BE);
+        UnsupportedEncodingException exception = assertThrows(UnsupportedEncodingException.class, () -> factory.createGenerator(mock(OutputStream.class), JsonEncoding.UTF16_BE));
+
+        // then
+        assertThat(exception.getMessage(), equalTo("Encoding not supported: " + JsonEncoding.UTF16_BE.getJavaName()));
 
     }
 
@@ -83,11 +84,11 @@ public class SingleThreadJsonFactoryTest {
         // given
         SingleThreadJsonFactory factory = new SingleThreadJsonFactory();
 
-        expectedException.expect(UnsupportedOperationException.class);
-        expectedException.expectMessage("Writer not supported. Use OutputStream");
-
         // when
-        factory.createGenerator(mock(Writer.class));
+        UnsupportedOperationException exception = assertThrows(UnsupportedOperationException.class, () -> factory.createGenerator(mock(Writer.class)));
+
+        // then
+        assertThat(exception.getMessage(), equalTo("Writer not supported. Use OutputStream"));
 
     }
 
