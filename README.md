@@ -1,7 +1,7 @@
 # Single Thread Jackson
 
 [![Build Status](https://travis-ci.com/appenders/appenders-jackson-st.svg?branch=main)](https://travis-ci.com/github/appenders/appenders-jackson-st)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.appenders.jackson/appenders-jackson-st/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.appenders.jackson/appenders-jackson-st/badge.svg)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.appenders.st/appenders-jackson-st/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.appenders.st/appenders-jackson-st/badge.svg)
 [![codecov](https://codecov.io/gh/appenders/appenders-jackson-st/branch/main/graph/badge.svg?token=UHMX2NODNW)](https://codecov.io/gh/appenders/appenders-jackson-st)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/appenders/appenders-jackson-st)
 
