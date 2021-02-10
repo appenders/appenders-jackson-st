@@ -11,6 +11,42 @@
     <name>Appenders Jackson ST</name>
     <description>Jackson FasterXML factories and related classes for single-threaded usage</description>
 
+    <url>https://github.com/appenders/appenders-jackson-st</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Rafal Foltynski</name>
+            <email>r.foltynski@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/appenders/appenders-jackson-st</url>
+        <connection>scm:git:https://github.com/appenders/appenders-jackson-st.git</connection>
+        <developerConnection>scm:git:git@github.com:appenders/appenders-jackson-st.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
