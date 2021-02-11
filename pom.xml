@@ -4,7 +4,7 @@
 
     <groupId>org.appenders.st</groupId>
     <artifactId>appenders-jackson-st</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <name>Appenders Jackson ST</name>
     <description>Jackson FasterXML factories and related classes for single-threaded usage</description>
@@ -31,7 +31,7 @@
         <url>https://github.com/appenders/appenders-jackson-st</url>
         <connection>scm:git:https://github.com/appenders/appenders-jackson-st.git</connection>
         <developerConnection>scm:git:git@github.com:appenders/appenders-jackson-st.git</developerConnection>
-        <tag>1.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
