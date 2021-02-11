@@ -32,13 +32,16 @@ NOTE: At the moment, it's meant to be used by ONLY ONE thread.
 
 ## Usage
 
-1. Build:
-    ```bash
-   mvn clean install
-    ```
+1. Add this snippet to your `pom.xml` file
+ ```xml
+<dependency>
+    <groupId>org.appenders.st</groupId>
+    <artifactId>appenders-jackson-st</artifactId>
+    <version>1.1</version>
+</dependency>
+ ```
 
-   Ensure that `com.fasterxml.jackson.core:jackson-core:2.12.0` or newer is available on your classpath - see `Dependencies` section below.
-
+Ensure that `com.fasterxml.jackson.core:jackson-core:2.12.0` or newer is available on your classpath - see `Dependencies` section below.
 
 2. Create `com.fasterxml.jackson.databind.ObjectWriter`
     ```java
@@ -58,4 +61,4 @@ It's compatible with Jackson FasterXML Core v2.12 or higher.
 
 ## Notes
 
-This factory was developed as a part of [log4j2-elasticsearch project](https://github.com/rfoltyns/log4j2-elasticsearch) and is available via configuration (pluggable and optional).
+This factory was developed as a part of [log4j2-elasticsearch project](https://github.com/rfoltyns/log4j2-elasticsearch).
