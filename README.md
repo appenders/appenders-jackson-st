@@ -37,7 +37,7 @@ NOTE: At the moment, it's meant to be used by ONLY ONE thread.
 <dependency>
     <groupId>org.appenders.st</groupId>
     <artifactId>appenders-jackson-st</artifactId>
-    <version>1.1</version>
+    <version>1.0.1</version>
 </dependency>
  ```
 
